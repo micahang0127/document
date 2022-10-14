@@ -2,18 +2,76 @@
 
 <br />
 * 공통점 <br />
-  **SPA (Single Page Application)** <br />
+  SPA (Single Page Application) <br>
   정적 리소스를 최초에만 로드하고 이후 새로운 페이지 요청을 받을 때 새로고침 없이 갱신에 필요한 데이터만 받아와서 갱신하는 방식이다.
-       
-**  Virtual DOM 렌더링**<br />
+  <br><br>  
+  Virtual DOM 렌더링 <br>
   실제 DOM을 조작하지 않고 가상 DOM으로 html을 렌더링하기 때문에 브러우저의 렌더링 횟수가 줄어들고, pc자원 소모를 감소할 수 있다.
   <br />
-
-<br />
+  
+<hr/>
 * 차이점 <br />
-  Vue 2.x : 러닝커브가 낮아 학습이 용이하고 생산성이 뛰어나다<br />
-  Vue 3.x : 기존 data, computed를 사용하는 방식 -> setup 을 통해 
-            IE 지원을 하지 않는다.
+  Vue 2.x : <br> 
+  - 러닝커브가 낮아 학습이 용이하고 생산성이 뛰어나다<br />
+  <br>
+  Vue 3.x : <br>
+  - wrapper div 제거 => style적용에 용이히짐 
+  <br>
+  
+   ```javascript
+   <template>
+     <div>
+       // Vue2.x에서는 template 하위 전체를 감싸는 div 필요
+     </div>
+    </template>
+   ```
+  <br>
+  - 기존 data, computed, method 선언 => setup 메소드 사용 <br>
+ 
+ ```javascript
+     // Vue2.x
+    export default {
+      props: {
+        title: String
+      },
+      data () {
+        return {
+          test: '',
+          sample: ''
+        }
+      },
+      methods: {
+        sendTest () {
+          // sendTest method
+        }
+      }
+    }
+ ```
+  
+  ```javascript
+     // Vue 3.x
+    export default {
+      props: {
+        title: String
+      },
+      setup () {
+        const state = reactive({
+          test: '',
+          sample: ''
+        })
+    
+        const sendTest = () => {
+          // sendTest method
+        }
+        return { 
+          sendTest,
+          state
+        }
+      }
+    }
+  ```
+  
+  - IE 지원을 하지 않는다.
   R : 상대적으로 자유도가 높고 개발자의 역량에 따라 영향이 높다
 
 
