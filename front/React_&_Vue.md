@@ -137,7 +137,7 @@
     프레임워크는 어느정도의 필요한 것들을 갖추고 있는 느낌이라면, 라이브러리는 최소한의 기능에서 다른 라이브러리들을 추가해 사용하는데 초점을 맞출수 있다.<br>
    - vue 단방향/양방향 데이터 바인딩, react는 단방향 데이터 바인딩<br> 
    - JSX를 사용한다<br>
-    javascript 
+     JSX(Javascript XML)javascript 를 확장한 문법이다.
    - code 
    
   ```javascript
@@ -182,21 +182,60 @@
                  
    ```
    <br>
+   
+  - CSS <br>
+  1) css 파일 import <br>
+  2) CSS module <br>
+      : CRA(create-rect-app)로 프로젝트를 생성하면 CSS Module 기능을 제공한다. <br>
+        css 파일의 확장자를 .module.css로 작성하면, component명과 classname을 합성해 고유한 이름을 지어준다. <br>
+        이로 인해 클래스 이름의 중복을 막아준다. <br>
+  3) styled-Components 라이브러리<br>
+      : CSS in JS 방식, 즉 js안에 css를 작성하는 방식 <br>
+        vue의 경우 <style scoped> 로 해당 컴포넌트 내에서만 스타일을 제한 할 수 있다. <br>
+        react에서도 js파일 내부에 css를 작성하여 컴포넌트 파일 내에서 스타일을 지정할 수 있다.<br>
+        
+     ```javascript
+  
+        import styled from "styled-components";
 
-* 속도
-V: 렌더링 하는 시간이 더 빠르다.
+        const StyledHeader = styled.header`
+          color: white;
+          background-color: black;
+          font-size: 20px;
+          width: 300px;
+          text-align: center;
+        `;
 
-* UI라리브러리 
-R : Material UI (MUI)
-V :  Vuetify, Quasar
+        const Header = () => {
+          return <StyledHeader>This is Header.</StyledHeader>;
+        };
 
-* CSS
-R: react의 경우 css in js  방식으로 styled components 라이브러리를 사용할 수 있다. 
-V: 퍼블리셔와 협업에는 jsx을 사용하는 리액트 보다는 뷰를 사용하는데 작업에 더욱 용이하다
+        export default Header;
+    
+     ```
+     <br>
+  
+<hr>
+  
+* 속도 : vue가 렌더링 하는 시간이 더 빠르다. <br>
 
-* Typescript 에 대한 자유도
-V 2.x : 타입 스크립트 지원이 완벽하지 않다. 
-           props의 경우 타입스트립트로 정의한 타입을 사용 할수 없다. 
-V 3.x : 2.x 대 버전보다 원활애 졌다. 하지만 좀 더 안정화가 필요하다
+* UI라리브러리 <br>
+vue 2.x : Vuetify 다수의 사용 <br>
+vue 3.x : <br>
+ -- vuetify : vue3 지원의 Beta 버전의 사용. vuetify의 공식문서에도 vue3와의 테스트 및 연습 버전으로만 사용 권장. <br>
+ -- quasar (퀘이사) : vuetify와 달리 vue3를 지원하는 ui component로 급부상 중 <br>
+react : Material UI (MUI) <br>
+<br>
+
+* CSS <br>
+react : react의 경우 css in js  방식으로 styled components 라이브러리를 사용할 수 있다. <br>
+vue : 퍼블리셔와 협업에는 jsx을 사용하는 리액트 보다는 뷰를 사용하는데 작업에 더욱 용이하다 <br>
+<br>
+  
+* Typescript 에 대한 자유도 <br>
+vue 2.x : 타입 스크립트 지원이 완벽하지 않다. props의 경우 타입스트립트로 정의한 타입을 사용 할수 없다. <br>
+vue 3.x : 2.x 대 버전보다 원활애 졌다. 하지만 좀 더 안정화가 필요하다 <br>
+react : typescript가 jsx/tsx포맥을 지원하여 jsx에서도 타입을 검사할수 있다. 때문에 vue보다 더욱 잘 어울린다. <br>
+
 
 
