@@ -129,21 +129,58 @@
   
   <br>
   - IE 지원을 하지 않는다. 
-  <br>
-  React : 
+  
+  <br><br>
+  React : <br>
   - 상대적으로 자유도가 높고 개발자의 역량에 따라 영향을 미친다.
   - vue는 프레임워크, react는 라이브러리 이다. <br>
-    프레임워크는 어느정도의 필요한 것들을 갖추고 있는 느낌이라면, 라이브러리는 최소한의 기능에서 다른 라이브러리들을 추가해 사용하는데 초점을 맞출수 있다.
-   - JSX를 사용한다
+    프레임워크는 어느정도의 필요한 것들을 갖추고 있는 느낌이라면, 라이브러리는 최소한의 기능에서 다른 라이브러리들을 추가해 사용하는데 초점을 맞출수 있다.<br>
+   - JSX를 사용한다<br>
+   - vue 단방향/양방향 데이터 바인딩, react는 단방향 데이터 바인딩<br>
+   - code 
+   
+  ```javascript
+  // Vue의 state 변경
+  this.human[0] = 'kim';
 
-    프레임워크는 어느정도의 필요한 것들을 갖추고 있는 느낌이라면, 라이브러리는 최소한의 기능에서 다른 라이브러리들을 추가해 사용하는데 초점을 맞출수 있다.
 
+  // React의 state 변경
+  const [human, setHuman] = React.useState(['Park', 17, 'Male'])
 
-
-* 프로세스에 익숙해지기 까지의 러닝 커브
-
-V: react에 비해 러닝커브가 낮다. 즉 더 쉽다.
-
+  let humanCopy = [...human];
+  humanCopy[0] = 'kim';
+  setHumban(humanCopy);
+  ```
+    
+   <br>
+   
+   ```javascript
+   // Vue의 for
+   <template>
+    <ul>
+      <li v-for="data in list" :key="data.id">{{ data }}</li>
+     </ul>
+   </template>
+     
+     
+     
+   // React의 for
+   function List() {
+        const list = ['a', 'b', 'c'];
+        return (
+          <ul>
+            {
+              list.map((data) => 
+                  <li key={data.id}>{data}</li>
+                )
+             }
+          </ul>
+        );       
+    }
+    export default List;
+                 
+   ```
+   <br>
 
 * 속도
 V: 렌더링 하는 시간이 더 빠르다.
