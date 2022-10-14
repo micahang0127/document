@@ -73,13 +73,70 @@
   <br>
   - Composition API <br>
   Vue2.x 버전에서는 코드 재사용으로 믹스인(Mixin)이나 슬롯(slots) 등오로 코드를 재사용 했다. 하지만 믹스인 한계점이 있었다. 프로젝트가 커지고 믹스인을 다중으로 사용하게 되면 속성들이 병합 될때 충돌이 발생할 수 있고 네이밍에 대한 명확한 컨벤션이 필요했다.  또한 매개변수를 믹스인을 통해 전달할 수 없어 코드 재사용 시 유연성이 떨어졌다. <br>
-컴포지션 API 는 이를 보완하여 로직을 유연하게 구성할 수 있도록 하는 함수기반의 API이다. 코드의 재사용성과 타입 추론(타입스크립트)가 크게 개선되었다고 한다. 리액스의 Hooks와 유사한 느낌을 받을수 있다.
+컴포지션 API 는 로직을 유연하게 구성할 수 있도록 하는 함수기반의 API이다. 코드의 재사용성과 타입 추론(타입스크립트)가 크게 개선되었다고 한다. 리액스의 Hooks와 유사한 느낌을 받을수 있다. 
+<br>
+  
+  ```javascript
+  // Vue 2.x
+  // books에 관련된 코드들이 분산되어 추적이 어렵다.
+  export default {
+  data() {
+    return {
+      books: []
+    };
+  },
+  methods: {
+    addBook(title, author) {
+      this.books.push({ title, author });
+    }
+  },
+  computed: {
+    formattedBooks() {
+      return this.books.map(book => `${book.title}은 ${book.author}가 썻다`);
+    }
+  }
+};
+  ```
+  
+  ```javascript
+  // Vue 3.x
+  // setup 내부에 data와 function을 구성한다.
+  // ref, reactive, watchEffect 등 사용.
+  <script>
+  import { ref, reactive } from "vue";
+
+  export default {
+    name: "HOME",
+    setup() {
+      // 데이터를 ref, reactive로 감싸면 반응형으로 바뀐다
+      const person1 = ref({ name: "nkh", age: 29 });
+      const person2 = reactive({ name: "nki", age: 26 });
+
+      const handleClick = () => {
+        // ref로 감싼 값을 변경할 때는 value로 한번 들어가주고 값을 바꾼다
+        person1.value.age = 30;
+
+        // reactive는 바로 값을 바꾼다
+        person2.age = 30;
+      };
+
+      // ref값은 return을 거치게되면 person1.value.age는 person1.age로 바꾼다 (template에서는 person1.age로 사용)
+      return { person1, handleClick };
+    }
+  };
+  </script>
+  ```
   
   <br>
-  - 제한된 타입스크립트 지원 <br>
-  - IE 지원을 하지 않는다. <br>
-  
-  R : 상대적으로 자유도가 높고 개발자의 역량에 따라 영향이 높다
+  - IE 지원을 하지 않는다. 
+  <br>
+  React : 
+  - 상대적으로 자유도가 높고 개발자의 역량에 따라 영향을 미친다.
+  - vue는 프레임워크, react는 라이브러리 이다. <br>
+    프레임워크는 어느정도의 필요한 것들을 갖추고 있는 느낌이라면, 라이브러리는 최소한의 기능에서 다른 라이브러리들을 추가해 사용하는데 초점을 맞출수 있다.
+   - JSX를 사용한다
+
+    프레임워크는 어느정도의 필요한 것들을 갖추고 있는 느낌이라면, 라이브러리는 최소한의 기능에서 다른 라이브러리들을 추가해 사용하는데 초점을 맞출수 있다.
 
 
 
