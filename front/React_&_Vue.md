@@ -182,6 +182,15 @@
                  
    ```
    <br>
+    
+    
+   
+  - Hooks <br>
+    : 함수형 컴포넌트와 훅의 사용. <br>
+      함수 컴포넌트가 어떤 값을 유지할 수 있도록, '캐시'를 만들었다. 이 캐시를 이용하고자 만든 여러개의 API를 '리액트 훅' 함수라고 부른다. <br>
+      함수 컴포넌트도 클래스 컴포넌트처럼 사용할 수 있다. 또 함수 컴포넌트는 클래스 컴포넌트와 다르게, 모듈로 활용하기가 쉽다. <br>
+       useState, useEffect, useContext, useReducer, useRef 등이 있다.
+
    
   - CSS <br>
   1) css 파일 import <br>
@@ -213,7 +222,9 @@
         export default Header;
     
      ```
+  
      <br>
+  
   
 <hr>
   
