@@ -22,7 +22,7 @@
     React에서 제공하는 상태 관리 라이브러리. 상대적으로 가벼운 편이고 리렌더링 이슈를 피할 수 있다는 장점이 있다. 허나 아직 안정적인 devtool이 없어 디버깅에서 약하다. 
 
 * 비동기처리
-  - react-query <br> 
+  - React-Query <br> 
     redux + (redux-saga or redux-thunk) 조합으로 클리이언트-서버 간 api요청 비동기 처리하는 것 보다 보일러플레이트가 적음 <br>
    
     
