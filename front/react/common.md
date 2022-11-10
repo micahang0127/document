@@ -19,7 +19,12 @@
     @observable 데코레이터로 지정한 State는 관찰대상으로 지정되고 그 State는 값이 변경될 때 마다 Rerendering된다.<br>
     
    - Recoil : <br>
-    React에서 제공하는 상태 관리 라이브러리. 상대적으로 가벼운 편이고 리렌더링 이슈를 피할 수 있다는 장점이 있다. 허나 아직 안정적인 devtool이 없어 디버깅에서 약하다.
+    React에서 제공하는 상태 관리 라이브러리. 상대적으로 가벼운 편이고 리렌더링 이슈를 피할 수 있다는 장점이 있다. 허나 아직 안정적인 devtool이 없어 디버깅에서 약하다. 
+
+* 비동기처리
+  - react-query <br> 
+    redux + (redux-saga or redux-thunk) 조합으로 클리이언트-서버 간 api요청 비동기 처리하는 것 보다 보일러플레이트가 적음 <br>
+   
     
     
 * Error <br>
