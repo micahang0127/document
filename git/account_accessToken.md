@@ -1,7 +1,7 @@
 
 <br/>
 
-### [[gitLab or github]]
+### [gitLab or github]
   1) 내 프로필 클릭
   2) access token 클릭
   3) access token 발급
@@ -9,7 +9,7 @@
 
 <br/><br/>
 
-### [[로컬 프로젝트에 생성한 git 계정(+access token) 적용 - (by Fork tool)]]
+### [로컬 프로젝트에 생성한 git 계정(+access token) 적용 - (by Fork tool)]
   * [새로운 계정 등록] <br/>
       1) 상단 메뉴 Fork -> Accounts -> + 버튼으로 gitlab 계정 등록(=Login) <br/>
       2) Personal Access Token에 위에서 생성한 access token 입력 <br/>
