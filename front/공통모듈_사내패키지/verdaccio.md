@@ -1,6 +1,17 @@
 
 
-## verdaccio
+## verdaccio 
+  : private npm package 저장소 
+
+
+<br/>
+
+  [[진행]()] <br/>
+  ```
+    1. 터미널에서 로컬에 verdaccio 설치
+      $  sudo nom Install -g verdaccio
+  ```
+<br/>
 
   [[실행]()] <br/>
   ```
@@ -9,7 +20,8 @@
       $ verdaccio
 
     * 실행확인
-      http://localhost:4873 접속
+      - 접속 : 기본포트 4873
+      http://localhost:4873
 
   ```
 
@@ -51,3 +63,9 @@
           $ npm config set https-proxy http://your-proxy-address:your-proxy-port
 
   ```
+
+
+
+<br/><br/>
+[참고] 
+https://mygumi.tistory.com/371
