@@ -1,2 +1,2 @@
 # document
-md file &amp; doc file
+기술 & 잡동지식 기록
