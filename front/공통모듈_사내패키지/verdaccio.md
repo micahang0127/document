@@ -2,7 +2,7 @@
 
 ## verdaccio
 
-  [실행] <br/>
+  [[실행]()] <br/>
   ```
 
     * 실행
@@ -15,7 +15,7 @@
 
 <br/>
 
-  [라이브러리(공통모듈) 가져와 사용하기] <br/>
+  [[라이브러리(공통모듈) 가져와 사용하기]()] <br/>
   ```
 
     [package.json]
@@ -29,9 +29,9 @@
 
 <br/><br/>
 
-  [Issue] <br/>
+  [[Issue]()] <br/>
 
-  1) [Error] - verdaccio 사용 뒤, 다른 프로젝트에서 npm install 할때 에러 <br/>
+  1) [Error]  verdaccio 사용 뒤, 다른 프로젝트에서 npm install 할때 에러 <br/>
   ```
 
       [이슈]
