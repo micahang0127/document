@@ -59,7 +59,11 @@
       [Error] Error: Could not load
   ```
 
+<br/><br/><br/>
 
 
+[참고] <br/>
+rollup으로 library project 진행 하기 - 기본 사용 설명 잘 되어 있음 <br/>
+https://wormwlrm.github.io/2021/11/07/Rollup-React-TypeScript.html
 
 
